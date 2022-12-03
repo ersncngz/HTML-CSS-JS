@@ -1,124 +1,146 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Form Sayfası</title>
+	<script src="form.js"></script>
 </head>
+
 <body>
 	<form action="" method="get">
-	<div class="container"> 
-	 <section> <!-- Kişisel Bilgiler Start -->
-	<div class="kutubasligi">Kişisel Bilgiler</div>
- 	
-	<table width="450" height="220" border="1" >
-		<tr>
-			<td width=145;>Ad</td>
-			<td width=5;>:</td>
-			<td width=300;><input type="text" placeholder="Adınızı Giriniz." required></td>
-		</tr>
-		<tr>
-			<td>Soyad</td>
-			<td>:</td>
-			<td><input type="text" placeholder="Soyadınızı Giriniz." required></td>
-		</tr>
-		<tr>
-			<td>Doğum Tarihi</td>
-			<td>:</td>
-			<td><input type="date" name="" id="" placeholder="Doğum Tarihini Giriniz." required></td>
-		</tr>
-		<tr>
-			<td>Telefon</td>
-			<td>:</td>
-			<td><input type="text" placeholder="xxx xxx xx xx" required></td>
-		</tr>
-		<tr>
-			<td>Mail Adresi</td>
-			<td>:</td>
-			<td><input type="text" placeholder="Mail Adresinizi Giriniz"></td>
-		</tr>
-		<tr>
-			<td>Cinsiyet</td>
-			<td>:</td>
-			<td class="siyah"><input name="Cinsiyet" type="radio" class="radio" value=""  required>Erkek
-				<input name="Cinsiyet" type="radio" class="radio" value="" required>Kadın
-			</td>
-		</tr>
-	</table>
+		<div class="container">
+			<section>
+				<!-- Kişisel Bilgiler Start -->
+				<div class="kutubasligi">Kişisel Bilgiler</div>
 
-	</section> <!-- Kişisel Bilgiler Stop -->
-	
-	<section> <!-- Eğitim Bilgileri Start -->
-		<div class="kutubasligi"> Eğitim Bilgileri</div>
-			<table width="450" height="220" border="1" >
-				<tr>
-					<td width=145;>İlkokul</td>
-					<td width=5;>:</td>
-					<td width=300;><input type="text" placeholder="Okuduğunuz İlkokulu Giriniz." required></td>
-				</tr>
-				<tr>
-					<td>Ortaokul</td>
-					<td>:</td>
-					<td><input type="text" placeholder="Okuduğunuz Ortaokulu Giriniz." required></td>
-				</tr>
-				<tr>
-					<td>Lise</td>
-					<td>:</td>
-					<td><input type="date" name="" id="" placeholder="Okuduğunuz Liseyi Giriniz." required></td>
-				</tr>
-				<tr>
-					<td>Üniversite</td>
-					<td>:</td>
-					<td><input type="text" placeholder="Okuduğunuz Üniversiteyi Giriniz." required></td>
-				</tr>
-				<tr>
-					<td>Yüksek Lisans</td>
-					<td>:</td>
-					<td><input type="text" placeholder="Yüksek Lisans Yaptığınız Üniversiteyi Giriniz." required></td>
-				</tr>
-				<tr>
-					<td>Yabancı Dil</td>
-					<td>:</td>
-					<td class="siyah"><input class="onay" type="checkbox" value="">İngilizce
-						<input class="onay" type="checkbox" value="">Almanca
-						<input class="onay" type="checkbox" value="">Arapça
-						<input class="onay" type="checkbox" value="">Diğer
-					</td>
-				</tr>
-			</table>
-		
-	</section> <!-- Eğitim Bilgileri Stop -->
-	
-	<aside> <!-- ilgi Alanları Start -->
-		<div class="kutubasligi"> İlgi Alanları</div>
-			<input class="radio" type="checkbox" value="">Sinema<br>
-			<input class="radio" type="checkbox" value="">Tiyatro<br>
-			<input class="radio" type="checkbox" value="">Spor<br>
-			<input class="radio" type="checkbox" value="">Kitap<br>
-			<input class="radio" type="checkbox" value="">Diğer
+				<table width="450" height="220" border="1">
+					<tr>
+						<td width=145;>Ad</td>
+						<td width=5;>:</td>
+						<td width=300;><input type="text" placeholder="Adınızı Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Soyad</td>
+						<td>:</td>
+						<td><input type="text" placeholder="Soyadınızı Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Doğum Tarihi</td>
+						<td>:</td>
+						<td><input type="date" name="" id="" placeholder="Doğum Tarihini Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Telefon</td>
+						<td>:</td>
+						<td><input type="text" pattern="[\(]\d{3}[\)][\s]\d{3}[\s]\d{2}[\s]\d{2}"
+								placeholder="(xxx) xxx xx xx" required></td>
+					</tr>
+					<tr>
+						<td>Mail Adresi</td>
+						<td>:</td>
+						<td><input type="email" placeholder="Mail Adresinizi Giriniz" required></td>
+					</tr>
+					<tr>
+						<td>Cinsiyet</td>
+						<td>:</td>
+						<td class="siyah">
+							<input id="erkek" name="Cinsiyet" type="radio" class="radio" value="Erkek" required
+								onclick="askerlikdurumu(this.id)">Erkek
+							<input id="kadin" name="Cinsiyet" type="radio" class="radio" value="Kadın" required
+								onclick="askerlikdurumu(this.id)">Kadın
+							<input id="askerlik" name="asker" type="hidden" value=""
+								placeholder="Askerlik Durumunu Giriniz:">
+						</td>
+					</tr>
+				</table>
 
-		
-	</aside> <!-- ilgi Alanları Stop -->
-	<aside> <!-- Beceriler Start -->
-		<div class="kutubasligi"> Beceriler</div>
-			<input class="radio" type="checkbox" value="">Html<br>
-			<input class="radio" type="checkbox" value="">Css<br>
-			<input class="radio" type="checkbox" value="">Php<br>
-			<input class="radio" type="checkbox" value="">Asp.Net<br>
-			<input class="radio" type="checkbox" value="">Diğer
- 
-		
-	</aside> <!-- Beceriler Stop -->
-	<footer> <!-- Düşünceleriniz Start -->
-		<div class="kutubasligi"> Düşünceleriniz</div>
- 	<textarea name="" id="" cols="30" rows="10" required="required"></textarea><br><br>
-	<button class="gonder">Gönder</button>
-	<input class="gonder" name="" type="reset">
-		
-	</footer> <!-- Düşünceleriniz Stop -->
-</div>
-</form>
+			</section> <!-- Kişisel Bilgiler Stop -->
+
+			<section>
+				<!-- Eğitim Bilgileri Start -->
+				<div class="kutubasligi"> Eğitim Bilgileri</div>
+				<table width="450" height="220" border="1">
+					<tr>
+						<td width=145;>İlkokul</td>
+						<td width=5;>:</td>
+						<td width=300;><input type="text" placeholder="Okuduğunuz İlkokulu Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Ortaokul</td>
+						<td>:</td>
+						<td><input type="text" placeholder="Okuduğunuz Ortaokulu Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Lise</td>
+						<td>:</td>
+						<td><input type="text" name="" id="" placeholder="Okuduğunuz Liseyi Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Üniversite</td>
+						<td>:</td>
+						<td><input type="text" placeholder="Okuduğunuz Üniversiteyi Giriniz." required></td>
+					</tr>
+					<tr>
+						<td>Yüksek Lisans</td>
+						<td>:</td>
+						<td><input type="text" placeholder="Yüksek Lisans Yaptığınız Üniversiteyi Giriniz." required>
+						</td>
+					</tr>
+					<tr>
+						<td>Yabancı Dil</td>
+						<td>:</td>
+						<td class="siyah"><input class="onay" type="checkbox" value="">İngilizce
+							<input class="onay" type="checkbox" value="">Almanca
+							<input class="onay" type="checkbox" value="">Arapça
+							<input class="onay" type="checkbox" value="" onclick="ackapat('digerdil')">Diğer
+							<input id="digerdil" class="digerdil" name="digerdil" type="hidden" value=""
+								placeholder="Bildiğiniz diğer dili giriniz:">
+						</td>
+					</tr>
+				</table>
+
+			</section> <!-- Eğitim Bilgileri Stop -->
+
+			<aside>
+				<!-- ilgi Alanları Start -->
+				<div class="kutubasligi"> İlgi Alanları</div>
+				<input class="radio" type="checkbox" value="">Sinema<br>
+				<input class="radio" type="checkbox" value="">Tiyatro<br>
+				<input class="radio" type="checkbox" value="">Spor<br>
+				<input class="radio" type="checkbox" value="">Kitap<br>
+				<input class="radio" type="checkbox" value="" onclick="ackapat('digerilgi')">Diğer
+				<input id="digerilgi" class="digerilgi" name="digerilgi" type="hidden" value=""
+					placeholder="Diğer ilgi Alanınızı giriniz:">
+
+
+			</aside> <!-- ilgi Alanları Stop -->
+			<aside>
+				<!-- Beceriler Start -->
+				<div class="kutubasligi"> Beceriler</div>
+				<input class="radio" type="checkbox" value="">Html<br>
+				<input class="radio" type="checkbox" value="">Css<br>
+				<input class="radio" type="checkbox" value="">Php<br>
+				<input class="radio" type="checkbox" value="">Asp.Net<br>
+				<input class="radio" type="checkbox" value="" onclick="ackapat('digerbeceri')">Diğer
+				<input id="digerbeceri" class="digerbeceri" name="digerbeceri" type="hidden" value=""
+					placeholder="Diğer ilgi Alanınızı giriniz:">
+
+
+			</aside> <!-- Beceriler Stop -->
+			<footer>
+				<!-- Düşünceleriniz Start -->
+				<div class="kutubasligi"> Düşünceleriniz</div>
+				<textarea name="" id="" cols="30" rows="10" required="required"></textarea><br><br>
+				<button class="gonder">Gönder</button>
+				<input class="gonder" name="" type="reset" onclick="sifirla()">
+
+			</footer> <!-- Düşünceleriniz Stop -->
+		</div>
+	</form>
 </body>
+
 </html>
